@@ -11,10 +11,11 @@ import java.util.Scanner;
 import com.cursoceat.xml.schema.Temperaturas;
 import com.cursoceat.xml.schema.Temperaturas.Temperatura;
 public class Controller {
-
+static Scanner entrada = new Scanner(System.in);
+	
 	public static void main(String[] args) throws JAXBException {
 		// TODO Auto-generated method stub
-Scanner entrada = new Scanner(System.in);
+
 		System.out.println("************ MENU ************");
 		System.out.println("1- Registrar nueva temperatura");
 		System.out.println("2- Mostrar historial de registros");
@@ -43,6 +44,7 @@ Scanner entrada = new Scanner(System.in);
 	
 	Temperaturas temperatura =(Temperaturas)miLectura.unmarshal(miArchivo);
 	for (Temperatura t: temperatura.getTemperatura()) {
+				
 		System.out.println(t.getFecha());
 		System.out.println(t.getTemperaturaMax());
 		System.out.println(t.getTemperaturaMin());
@@ -67,10 +69,28 @@ Scanner entrada = new Scanner(System.in);
 		temperatura2.setTemperaturaMin(2);
 		miTemperatura.getTemperatura().add(temperatura2);
 		
+		//pregunto datos
+		
+		System.out.println("Escriba la fecha");
+		String fecha= entrada.next();
+		System.out.println("Escriba la temperatura máxima");
+		int tempMax= entrada.nextInt();
+		System.out.println("Escriba la temperatura mínima");
+		int tempMin= entrada.nextInt();
+		
+		int i=3;
+		i++;
+		Temperatura temperatura3 = new Temperatura();
+		temperatura3.setFecha(fecha);
+		temperatura3.setTemperaturaMax(tempMax);
+		temperatura3.setTemperaturaMin(tempMin);
+		miTemperatura.getTemperatura().add(temperatura3);
+		
 		JAXBContext miContexto = JAXBContext.newInstance(Temperaturas.class);
 		Marshaller miLectura = miContexto.createMarshaller();
 		miLectura.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		miLectura.marshal(miTemperatura, System.out);
+		
+	  //miLectura.marshal(miTemperatura, System.out);
 		miLectura.marshal(miTemperatura, new File("C:\\Users\\PROGRAMACION\\Documentos\\JAVA\\Temperaturas\\registro.xml"));
 		
 	}

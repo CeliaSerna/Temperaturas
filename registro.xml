@@ -10,4 +10,9 @@
         <temperaturaMax>15</temperaturaMax>
         <temperaturaMin>2</temperaturaMin>
     </temperatura>
+    <temperatura>
+        <fecha>11-05-2023</fecha>
+        <temperaturaMax>30</temperaturaMax>
+        <temperaturaMin>6</temperaturaMin>
+    </temperatura>
 </temperaturas>
