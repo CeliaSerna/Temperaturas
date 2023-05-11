@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<temperaturas>
+<temperatura>
+<fecha>2020-01-15</fecha>
+<temperaturaMax>12</temperaturaMax>
+<temperaturaMin>-1</temperaturaMin>
+</temperatura>
+<temperatura>
+<fecha>2020-01-16</fecha>
+<temperaturaMax>15</temperaturaMax>
+<temperaturaMin>2</temperaturaMin>
+</temperatura>
+</temperaturas>
